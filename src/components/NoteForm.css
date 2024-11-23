@@ -1,0 +1,67 @@
+/* Modal Container */
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Slightly rounded corners for better styling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  max-width: 400px; /* Limits the modal width */
+  width: 100%; /* Ensures the modal is responsive */
+  box-sizing: border-box; /* Prevents content overflow due to padding */
+}
+
+/* Form Fields */
+.note-form input,
+.note-form textarea,
+.note-form select {
+  width: 100%; /* Ensure fields fit within the modal */
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem; /* Improves readability */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Consistent with the modal design */
+  box-sizing: border-box; /* Prevents overflow issues */
+}
+
+/* Textarea Specific Styling */
+.note-form textarea {
+  resize: none; /* Prevents resizing to avoid breaking the layout */
+  height: 100px; /* Default height for description */
+}
+
+/* Form Buttons */
+.note-form button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem; /* Matches the input font size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add/Update Button */
+.note-form button[type="submit"] {
+  background-color: #6c63ff; /* Primary color for action */
+  color: white;
+}
+
+.note-form button[type="submit"]:hover {
+  background-color: #4b47bd;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Cancel Button */
+.note-form button[type="button"] {
+  background-color: #e0e0e0; /* Neutral color for cancel */
+  color: #333;
+}
+
+.note-form button[type="button"]:hover {
+  background-color: #ccc;
+  transform: scale(1.05);
+}
