@@ -17,7 +17,7 @@ function App() {
   // Fetch notes from the server
   const fetchNotes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/notes", {
+      const response = await axios.get("https://notes-manager-backend-4nuz.onrender.com/notes", {
         params: searchQuery ? { search: searchQuery } : {},
       });
       setNotes(response.data);
@@ -29,7 +29,7 @@ function App() {
   // Add a new note
   const handleAddNote = async (note) => {
     try {
-      const response = await axios.post("http://localhost:5000/notes", note);
+      const response = await axios.post("https://notes-manager-backend-4nuz.onrender.com/notes", note);
       setNotes([response.data, ...notes]);
       setIsFormOpen(false);
     } catch (error) {
@@ -41,7 +41,7 @@ function App() {
   const handleEditNote = async (updatedNote) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/notes/${updatedNote._id}`,
+        `https://notes-manager-backend-4nuz.onrender.com/notes/${updatedNote._id}`,
         updatedNote
       );
       setNotes(
@@ -59,7 +59,7 @@ function App() {
   // Delete a note
   const handleDeleteNote = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5000/notes/${_id}`);
+      await axios.delete(`https://notes-manager-backend-4nuz.onrender.com/notes/${_id}`);
       setNotes(notes.filter((note) => note._id !== _id));
     } catch (error) {
       console.error("Error deleting note:", error);
